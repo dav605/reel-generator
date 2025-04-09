@@ -11,7 +11,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const app = express();
 aapp.use(cors({
   origin: "*",
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST","OPTIONS"],
   allowedHeaders: ["Content-Type"],
 }));
 app.use(express.json());
