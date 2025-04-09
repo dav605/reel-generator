@@ -7,13 +7,13 @@ export default function InputForm({ onScriptGenerated }) {
   const [tone, setTone] = useState('');
   const [duration, setDuration] = useState(10);
   const [loading, setLoading] = useState(false);
-  const BACKEND_URL=import.meta.env.VITE_BACKEND_URL;
+  const VITE_BACKEND_URL=import.meta.env.VITE_BACKEND_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await axios.post(`${BACKEND_URL}/generate`, {
+      const response = await axios.post(`${VITE_BACKEND_URL}/generate`, {
         prompt,
         tone,
         duration: Number(duration),
